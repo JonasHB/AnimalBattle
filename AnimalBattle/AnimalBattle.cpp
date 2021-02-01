@@ -151,11 +151,11 @@ int DynamicAllocationOfAnimalWarriors()
 	{
 		Character TempWarrior("Warrior " + to_string(i), CAT);
 		TempWarrior.addItemToCharInv(STONE_KNIFE);
-		//ListOfAnimalWarriors.push_back(TempWarrior);
+		ListOfAnimalWarriors.push_back(TempWarrior);
 	}
 	for (int i = 0; i < 10; i++)
 	{
-		//ListOfAnimalWarriors.pop_back();
+		ListOfAnimalWarriors.pop_back();
 	}
 	return 0;
 }
