@@ -19,7 +19,6 @@ public:
 	~Inventory();
 	void add(weapons weapon_to_add);
 	void list_inv();
-	Weapon returnCursorItem();
 	std::list<Weapon> weaponList;
 	void stepCursor() { cursor = cursor->next; }
 	void resetCursor() { cursor = head; }

@@ -3,4 +3,3 @@
 #include <list>
 #include "AnimalType.h"
 #include "Character.h"
-
