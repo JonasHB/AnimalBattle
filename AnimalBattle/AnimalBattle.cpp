@@ -1,9 +1,10 @@
 #include "AnimalBattle.h"
+#include <cassert>
 
 using namespace std;
 
 int test1();
-int DynamicAllocationOfAnimalWarriors();
+void DynamicAllocationOfAnimalWarriors();
 
 int main()
 {
@@ -20,18 +21,21 @@ int test1() {
 	TestCharacter2.printDescription();
 	return 0;
 }
-int DynamicAllocationOfAnimalWarriors()
+void DynamicAllocationOfAnimalWarriors()
 {
 	list<Character> ListOfAnimalWarriors;
-	for (int i = 0; i < 10; i++)
+	int amountOfWarriorsToBeCreated = 10000;
+
+	for (int i = 0; i < amountOfWarriorsToBeCreated; i++)
 	{
 		Character TempWarrior("Warrior " + to_string(i), CAT);
 		TempWarrior.addItemToCharInv(STONE_KNIFE);
 		ListOfAnimalWarriors.push_back(TempWarrior);
 	}
-	for (int i = 0; i < 10; i++)
+	assert(ListOfAnimalWarriors.size() == amountOfWarriorsToBeCreated);
+	for (int i = 0; i < amountOfWarriorsToBeCreated; i++)
 	{
 		ListOfAnimalWarriors.pop_back();
 	}
-	return 0;
+	assert(ListOfAnimalWarriors.size() == 0);
 }
