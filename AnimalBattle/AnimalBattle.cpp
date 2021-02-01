@@ -1,17 +1,7 @@
 #include <iostream>
-#include <string>
-#include <list>
 #include "AnimalBattle.h"
 
 using namespace std;
-
-const unsigned char WOODEN_BOW_RANGE = 3;
-const unsigned char WOODEN_BOW_DAMAGE = 2;
-const unsigned char STONE_KNIFE_RANGE = 1;
-const unsigned char STONE_KNIFE_DAMAGE = 2;
-
-
-
 
 
 string printAnimalType(animals myAnimalType) {
@@ -73,30 +63,22 @@ Weapon null_Weapon;
 
 
 Inventory::Inventory() {
-	head = NULL;
-	cursor = NULL;
 }
 Inventory::~Inventory() {
-	while (head != NULL) {
-		Item *n = head->next;
-		delete head;
-		head = n;
+	while (!weaponList.empty())
+	{
+		weaponList.pop_back();
 	}
 }
 void Inventory::add(weapons weapon_to_add) {
-	Item *n = new Item;
 	Weapon temp_weapon(weapon_to_add);
-	n->this_weapon = temp_weapon;
-	n->next = head;
-	head = n;
+	weaponList.push_back(temp_weapon);
 }
 void Inventory::list_inv() {
-	Item *n = head;
-	while (n != NULL)
+	list<Weapon>::iterator it;
+	for (it = weaponList.begin(); it != weaponList.end(); it++)
 	{
-		cout << printWeapon(n->this_weapon.m_WeaponType) << endl;
-
-		n = n->next;
+		cout << "\t\t" << printWeapon(it->m_WeaponType) << endl;
 	}
 };
 Weapon Inventory::returnCursorItem() {
@@ -135,12 +117,7 @@ void Character::printDescription() {
 		<< "\tHealth: " << health << endl
 		<< "\tAnimal type: " << printAnimalType(charAnimalType.m_strAnimalType) << endl
 		<< "\tInventory:" << endl;
-	charInventory.resetCursor();
-	while (charInventory.returnCursorItem().m_WeaponType != NULL_WEAPON)
-	{
-		cout << "\t\t" << printWeapon(charInventory.returnCursorItem().m_WeaponType) << endl;
-		charInventory.stepCursor();
-	}
+	charInventory.list_inv();
 };
 void Character::addItemToCharInv(weapons item_to_add) {
 	charInventory.add(item_to_add);
