@@ -21,12 +21,3 @@ void Inventory::list_inv() {
 		cout << std::endl;
 	}
 };
-
-string printWeapon(weapons myWeapon) {
-	if (myWeapon == WOODEN_BOW)
-		return "Wooden bow";
-	else if (myWeapon == STONE_KNIFE)
-		return "Stone knife";
-	else
-		return "Undefined weapon";
-}

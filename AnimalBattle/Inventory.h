@@ -25,6 +25,4 @@ public:
 	void resetCursor() { cursor = head; }
 };
 
-string printWeapon(weapons myWeapon);
-
 #endif //INVENTORY_H
