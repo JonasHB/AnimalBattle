@@ -23,4 +23,12 @@ public:
 	unsigned int get_damage();
 	std::string GetWeaponAsString();
 };
+
+class Bow : public Weapon{
+public:
+	weapons weapon_type;
+	Bow(weapons strWeaponType);
+	unsigned int arrows;
+	void ChargeArrows(unsigned int amount_of_arrows_to_charge);
+};
 #endif //WEAPON_H

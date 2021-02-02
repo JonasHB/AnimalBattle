@@ -6,12 +6,14 @@ using namespace std;
 int Test1();
 void DynamicAllocationOfAnimalWarriors();
 void KnifeAndBowHaveDifferentRange();
+void UseSpecificBowFeature();
 
 int main()
 {
 	Test1();
 	DynamicAllocationOfAnimalWarriors();
 	KnifeAndBowHaveDifferentRange();
+	UseSpecificBowFeature();
 	return 0;
 }
 int Test1() {
@@ -52,4 +54,11 @@ void KnifeAndBowHaveDifferentRange()
 
 	assert(testCharacter.FindSpecificItemInInventory(STONE_KNIFE).weapon_type != testCharacter2.FindSpecificItemInInventory(WOODEN_BOW).weapon_type);
 	assert(testCharacter.FindSpecificItemInInventory(STONE_KNIFE).get_range() != testCharacter2.FindSpecificItemInInventory(WOODEN_BOW).get_range());
+}
+
+void UseSpecificBowFeature()
+{
+	Bow testWeapon(WOODEN_BOW);
+	testWeapon.ChargeArrows(5);
+	assert(testWeapon.arrows == 5);
 }

@@ -30,3 +30,14 @@ std::string Weapon::GetWeaponAsString()
 	else
 		return "Undefined weapon";
 }
+
+Bow::Bow(weapons strWeaponType)
+{
+	weapon_type = strWeaponType;
+	arrows = 0;
+}
+
+void Bow::ChargeArrows(unsigned int amount_of_arrows_to_charge)
+{
+	arrows = arrows + amount_of_arrows_to_charge;
+}
