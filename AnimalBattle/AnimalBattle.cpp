@@ -5,6 +5,7 @@ using namespace std;
 
 int test1();
 void DynamicAllocationOfAnimalWarriors();
+void KnifeAndBowHaveDifferentRange();
 
 int main()
 {
@@ -38,4 +39,8 @@ void DynamicAllocationOfAnimalWarriors()
 		ListOfAnimalWarriors.pop_back();
 	}
 	assert(ListOfAnimalWarriors.size() == 0);
+}
+
+void KnifeAndBowHaveDifferentRange()
+{
 }
