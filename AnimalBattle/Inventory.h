@@ -22,6 +22,7 @@ public:
 	std::list<Weapon> weapon_list;
 	void StepCursor() { cursor = cursor->next; }
 	void ResetCursor() { cursor = head; }
+	Weapon FindSpecificItemInInventory(weapons weapon_to_be_found);
 };
 
 #endif //INVENTORY_H

@@ -15,7 +15,12 @@ void Character::AddItemToCharacterInventory(weapons item_to_add) {
 };
 void Character::ListCharacterInventory() {
 	characterInventory.ListInventory();
-};
+}
+Weapon Character::FindSpecificItemInInventory(weapons weapon_to_be_found)
+{
+	return characterInventory.FindSpecificItemInInventory(weapon_to_be_found);
+}
+;
 
 std::string PrintAnimalType(animals myAnimalType) {
 	if (myAnimalType == NULL_ANIMAL)

@@ -11,6 +11,7 @@ int main()
 {
 	Test1();
 	DynamicAllocationOfAnimalWarriors();
+	KnifeAndBowHaveDifferentRange();
 	return 0;
 }
 int Test1() {
@@ -43,4 +44,12 @@ void DynamicAllocationOfAnimalWarriors()
 
 void KnifeAndBowHaveDifferentRange()
 {
+	Character testCharacter("Test Character", CAT);
+	testCharacter.AddItemToCharacterInventory(STONE_KNIFE);
+
+	Character testCharacter2("Test Character 2", CAT);
+	testCharacter2.AddItemToCharacterInventory(WOODEN_BOW);
+
+	assert(testCharacter.FindSpecificItemInInventory(STONE_KNIFE).weapon_type != testCharacter2.FindSpecificItemInInventory(WOODEN_BOW).weapon_type);
+	assert(testCharacter.FindSpecificItemInInventory(STONE_KNIFE).get_range() != testCharacter2.FindSpecificItemInInventory(WOODEN_BOW).get_range());
 }

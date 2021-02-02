@@ -21,6 +21,6 @@ public:
 	Weapon();
 	unsigned int get_range();
 	unsigned int get_damage();
-	std::string get_weapon();
+	std::string GetWeaponAsString();
 };
 #endif //WEAPON_H

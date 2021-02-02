@@ -24,6 +24,7 @@ public:
 	void PrintDescription();
 	void AddItemToCharacterInventory(weapons item_to_add);
 	void ListCharacterInventory();
+	Weapon FindSpecificItemInInventory(weapons weapon_to_be_found);
 };
 
 std::string PrintAnimalType(animals myAnimalType);

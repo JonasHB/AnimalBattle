@@ -21,7 +21,7 @@ unsigned int Weapon::get_range() {
 unsigned int Weapon::get_damage() {
 	return damage_;
 }
-std::string Weapon::get_weapon()
+std::string Weapon::GetWeaponAsString()
 {
 	if (weapon_type == WOODEN_BOW)
 		return "Wooden bow";
