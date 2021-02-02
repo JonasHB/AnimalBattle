@@ -7,25 +7,25 @@
 
 class Character {
 private:
-	std::string charName;
-	AnimalType charAnimalType;
-	unsigned int health;
+	std::string character_name_;
+	AnimalType characterAnimalType;
+	unsigned int health_;
 
-	Inventory charInventory;
+	Inventory characterInventory;
 public:
 	Character()
-		: charName("Noname"), charAnimalType(NULL_ANIMAL), health(10) {}
+		: character_name_("Noname"), characterAnimalType(NULL_ANIMAL), health_(10) {}
 
 	Character(std::string myName, AnimalType myAnimalType)
-		: charName(myName), charAnimalType(myAnimalType), health(10) {}
+		: character_name_(myName), characterAnimalType(myAnimalType), health_(10) {}
 
 	~Character();
 
-	void printDescription();
-	void addItemToCharInv(weapons item_to_add);
-	void listCharInv();
+	void PrintDescription();
+	void AddItemToCharacterInventory(weapons item_to_add);
+	void ListCharacterInventory();
 };
 
-std::string printAnimalType(animals myAnimalType);
+std::string PrintAnimalType(animals myAnimalType);
 
 #endif //CHARACTER_H

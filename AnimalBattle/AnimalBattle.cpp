@@ -3,42 +3,42 @@
 
 using namespace std;
 
-int test1();
+int Test1();
 void DynamicAllocationOfAnimalWarriors();
 void KnifeAndBowHaveDifferentRange();
 
 int main()
 {
-	test1();
+	Test1();
 	DynamicAllocationOfAnimalWarriors();
 	return 0;
 }
-int test1() {
-	Character TestCharacter("TestCharacter", CAT);
-	Character TestCharacter2;
-	TestCharacter.addItemToCharInv(STONE_KNIFE);
-	TestCharacter.addItemToCharInv(WOODEN_BOW);
-	TestCharacter.printDescription();
-	TestCharacter2.printDescription();
+int Test1() {
+	Character testCharacter("TestCharacter", CAT);
+	Character testCharacter2;
+	testCharacter.AddItemToCharacterInventory(STONE_KNIFE);
+	testCharacter.AddItemToCharacterInventory(WOODEN_BOW);
+	testCharacter.PrintDescription();
+	testCharacter2.PrintDescription();
 	return 0;
 }
 void DynamicAllocationOfAnimalWarriors()
 {
-	list<Character> ListOfAnimalWarriors;
-	int amountOfWarriorsToBeCreated = 10000;
+	list<Character> list_of_animal_warriors;
+	int amount_of_warriors_to_be_created = 10000;
 
-	for (int i = 0; i < amountOfWarriorsToBeCreated; i++)
+	for (int i = 0; i < amount_of_warriors_to_be_created; i++)
 	{
-		Character TempWarrior("Warrior " + to_string(i), CAT);
-		TempWarrior.addItemToCharInv(STONE_KNIFE);
-		ListOfAnimalWarriors.push_back(TempWarrior);
+		Character tempWarrior("Warrior " + to_string(i), CAT);
+		tempWarrior.AddItemToCharacterInventory(STONE_KNIFE);
+		list_of_animal_warriors.push_back(tempWarrior);
 	}
-	assert(ListOfAnimalWarriors.size() == amountOfWarriorsToBeCreated);
-	for (int i = 0; i < amountOfWarriorsToBeCreated; i++)
+	assert(list_of_animal_warriors.size() == amount_of_warriors_to_be_created);
+	for (int i = 0; i < amount_of_warriors_to_be_created; i++)
 	{
-		ListOfAnimalWarriors.pop_back();
+		list_of_animal_warriors.pop_back();
 	}
-	assert(ListOfAnimalWarriors.size() == 0);
+	assert(list_of_animal_warriors.size() == 0);
 }
 
 void KnifeAndBowHaveDifferentRange()

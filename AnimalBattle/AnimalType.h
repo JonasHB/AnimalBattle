@@ -7,9 +7,9 @@ enum animals { NULL_ANIMAL, CAT, DOG, GOAT, RABBIT };
 
 class AnimalType {
 public:
-	animals m_strAnimalType;
-	AnimalType(animals strAnimalType)
-		: m_strAnimalType(strAnimalType) {}
+	animals animal_type;
+	AnimalType(animals animal_type)
+		: animal_type(animal_type) {}
 };
 
 #endif //ANIMALTYPE_H

@@ -13,10 +13,10 @@ enum weapons { NULL_WEAPON, WOODEN_BOW, STONE_KNIFE };
 
 class Weapon {
 private:
-	unsigned int range;
-	unsigned int damage;
+	unsigned int range_;
+	unsigned int damage_;
 public:
-	weapons m_WeaponType;
+	weapons weapon_type;
 	Weapon(weapons strWeaponType);
 	Weapon();
 	unsigned int get_range();

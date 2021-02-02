@@ -17,11 +17,11 @@ class Inventory {
 public:
 	Inventory();
 	~Inventory();
-	void add(weapons weapon_to_add);
-	void list_inv();
-	std::list<Weapon> weaponList;
-	void stepCursor() { cursor = cursor->next; }
-	void resetCursor() { cursor = head; }
+	void Add(weapons weapon_to_add);
+	void ListInventory();
+	std::list<Weapon> weapon_list;
+	void StepCursor() { cursor = cursor->next; }
+	void ResetCursor() { cursor = head; }
 };
 
 #endif //INVENTORY_H

@@ -1,31 +1,31 @@
 #include "Weapon.h"
 
-Weapon::Weapon(weapons strWeaponType) :m_WeaponType(strWeaponType) {
-	if (m_WeaponType == WOODEN_BOW)
+Weapon::Weapon(weapons strWeaponType) :weapon_type(strWeaponType) {
+	if (weapon_type == WOODEN_BOW)
 	{
-		range = WOODEN_BOW_RANGE;
-		damage = WOODEN_BOW_DAMAGE;
+		range_ = WOODEN_BOW_RANGE;
+		damage_ = WOODEN_BOW_DAMAGE;
 	}
-	else if (m_WeaponType == STONE_KNIFE)
+	else if (weapon_type == STONE_KNIFE)
 	{
-		range = STONE_KNIFE_RANGE;
-		damage = STONE_KNIFE_DAMAGE;
+		range_ = STONE_KNIFE_RANGE;
+		damage_ = STONE_KNIFE_DAMAGE;
 	}
 }
 Weapon::Weapon() {
-	m_WeaponType = NULL_WEAPON;
+	weapon_type = NULL_WEAPON;
 };
 unsigned int Weapon::get_range() {
-	return range;
+	return range_;
 };
 unsigned int Weapon::get_damage() {
-	return damage;
+	return damage_;
 }
 std::string Weapon::get_weapon()
 {
-	if (m_WeaponType == WOODEN_BOW)
+	if (weapon_type == WOODEN_BOW)
 		return "Wooden bow";
-	else if (m_WeaponType == STONE_KNIFE)
+	else if (weapon_type == STONE_KNIFE)
 		return "Stone knife";
 	else
 		return "Undefined weapon";

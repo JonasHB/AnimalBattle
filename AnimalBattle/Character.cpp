@@ -2,22 +2,22 @@
 
 Character::~Character() {
 };
-void Character::printDescription() {
+void Character::PrintDescription() {
 	std::cout << "Name: "
-		<< charName << std::endl
-		<< "\tHealth: " << health << std::endl
-		<< "\tAnimal type: " << printAnimalType(charAnimalType.m_strAnimalType) << std::endl
+		<< character_name_ << std::endl
+		<< "\tHealth: " << health_ << std::endl
+		<< "\tAnimal type: " << PrintAnimalType(characterAnimalType.animal_type) << std::endl
 		<< "\tInventory:" << std::endl;
-	charInventory.list_inv();
+	characterInventory.ListInventory();
 };
-void Character::addItemToCharInv(weapons item_to_add) {
-	charInventory.add(item_to_add);
+void Character::AddItemToCharacterInventory(weapons item_to_add) {
+	characterInventory.Add(item_to_add);
 };
-void Character::listCharInv() {
-	charInventory.list_inv();
+void Character::ListCharacterInventory() {
+	characterInventory.ListInventory();
 };
 
-std::string printAnimalType(animals myAnimalType) {
+std::string PrintAnimalType(animals myAnimalType) {
 	if (myAnimalType == NULL_ANIMAL)
 		return "Undetermined animal type";
 	else if (myAnimalType == CAT)

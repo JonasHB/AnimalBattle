@@ -3,18 +3,18 @@
 Inventory::Inventory() {
 }
 Inventory::~Inventory() {
-	while (!weaponList.empty())
+	while (!weapon_list.empty())
 	{
-		weaponList.pop_back();
+		weapon_list.pop_back();
 	}
 }
-void Inventory::add(weapons weapon_to_add) {
+void Inventory::Add(weapons weapon_to_add) {
 	Weapon temp_weapon(weapon_to_add);
-	weaponList.push_back(temp_weapon);
+	weapon_list.push_back(temp_weapon);
 }
-void Inventory::list_inv() {
+void Inventory::ListInventory() {
 	std::list<Weapon>::iterator it;
-	for (it = weaponList.begin(); it != weaponList.end(); it++)
+	for (it = weapon_list.begin(); it != weapon_list.end(); it++)
 	{
 		cout << "\t\t";
 		cout << it->get_weapon();
