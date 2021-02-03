@@ -1,3 +1,6 @@
+// Weapon.h
+// Parent class for weapons. Responsible for keeping general weapon properties and methods.
+
 #ifndef WEAPON_H
 #define WEAPON_H
 

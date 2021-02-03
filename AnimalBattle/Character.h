@@ -1,3 +1,6 @@
+// Character.h
+// Class used for instantiating a character with related methods and properties such as health.
+
 #ifndef CHARACTER_H
 #define CHARACTER_H
 

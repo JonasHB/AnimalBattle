@@ -1,3 +1,6 @@
+// AnimalType.h
+// Class responsible for keeping track of what kind of animal the character is.
+
 #ifndef ANIMALTYPE_H
 #define ANIMALTYPE_H
 
