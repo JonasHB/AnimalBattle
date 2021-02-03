@@ -2,10 +2,10 @@
 // Main file. The program AnimalBattle is a fantasy battle simulator. The purpose of the program
 // is to serve as a porfolio showing a program created by JHB.
 
-// Todo: Kommentera färdigt
-// Todo: Gör något åt testerna, de kan inte ligga löst i denna filen
-// Todo: Kan man verkligen använda klassen Bow som jag gjort. En inventory har en lista över Weapon, inte Bow. Det verkar ju dock funka.
-// Todo: Lägg till något från nyare version av C++
+// Todo: Complete commenting the code
+// Todo: Do something about the tests, they can not exist like functions here
+// Todo: Can I really use the class Bow as I've done? An inventory has a list of the class Weapon, not Bow. But it seems to work.
+// Todo: Add something from a newer version of C++
 
 #include "AnimalBattle.h"
 #include <cassert>
