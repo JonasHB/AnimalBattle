@@ -1,5 +1,6 @@
 // Weapon.h
-// Parent class for weapons. Responsible for keeping general weapon properties and methods.
+// Weapon related classes. The parent class Weapon is responsible for keeping general weapon
+// properties and methods. The other classes in this file inherits the weapon class.
 
 #ifndef WEAPON_H
 #define WEAPON_H
