@@ -1,13 +1,13 @@
 #include "Weapon.h"
 
 // Determine range and damage of a weapon based on the weapon type
-Weapon::Weapon(weapons strWeaponType) :weapon_type(strWeaponType) {
-	if (weapon_type == WOODEN_BOW)
+Weapon::Weapon(weapons strWeaponType) :weapon_type_(strWeaponType) {
+	if (weapon_type_ == WOODEN_BOW)
 	{
 		range_ = WOODEN_BOW_RANGE;
 		damage_ = WOODEN_BOW_DAMAGE;
 	}
-	else if (weapon_type == STONE_KNIFE)
+	else if (weapon_type_ == STONE_KNIFE)
 	{
 		range_ = STONE_KNIFE_RANGE;
 		damage_ = STONE_KNIFE_DAMAGE;
@@ -15,7 +15,7 @@ Weapon::Weapon(weapons strWeaponType) :weapon_type(strWeaponType) {
 }
 
 Weapon::Weapon() {
-	weapon_type = NULL_WEAPON;
+	weapon_type_ = NULL_WEAPON;
 }
 
 unsigned int Weapon::get_range() {
@@ -28,17 +28,22 @@ unsigned int Weapon::get_damage() {
 
 std::string Weapon::GetWeaponAsString()
 {
-	if (weapon_type == WOODEN_BOW)
+	if (weapon_type_ == WOODEN_BOW)
 		return "Wooden bow";
-	else if (weapon_type == STONE_KNIFE)
+	else if (weapon_type_ == STONE_KNIFE)
 		return "Stone knife";
 	else
 		return "Undefined weapon";
 }
 
+weapons Weapon::GetWeaponType()
+{
+	return weapon_type_;
+}
+
 Bow::Bow(weapons strWeaponType)
 {
-	weapon_type = strWeaponType;
+	weapon_type_ = strWeaponType;
 	arrows = 0;
 }
 

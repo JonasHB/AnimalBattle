@@ -19,18 +19,22 @@ class Weapon {
 private:
 	unsigned int range_;
 	unsigned int damage_;
+	weapons weapon_type_;
+
 public:
-	weapons weapon_type;
 	Weapon(weapons strWeaponType);
 	Weapon();
 	unsigned int get_range();
 	unsigned int get_damage();
 	std::string GetWeaponAsString();
+	weapons GetWeaponType();
 };
 
 class Bow : public Weapon{
+private:
+	weapons weapon_type_;
+
 public:
-	weapons weapon_type;
 	Bow(weapons strWeaponType);
 	unsigned int arrows;
 	void ChargeArrows(unsigned int amount_of_arrows_to_charge);

@@ -30,7 +30,7 @@ Weapon Inventory::FindSpecificItemInInventory(weapons weapon_to_be_found)
 	list<Weapon>::iterator it;
 	for (it = weapon_list_.begin(); it != weapon_list_.end(); it++)
 	{
-		if (it->weapon_type == weapon_to_be_found)
+		if (it->GetWeaponType() == weapon_to_be_found)
 			return *it;
 	}
 	return NULL_WEAPON;

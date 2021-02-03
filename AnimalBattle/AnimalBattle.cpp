@@ -58,7 +58,7 @@ void KnifeAndBowHaveDifferentRange()
 	Character testCharacter2("Test Character 2", CAT);
 	testCharacter2.AddItemToCharacterInventory(WOODEN_BOW);
 
-	assert(testCharacter.FindSpecificItemInInventory(STONE_KNIFE).weapon_type != testCharacter2.FindSpecificItemInInventory(WOODEN_BOW).weapon_type);
+	assert(testCharacter.FindSpecificItemInInventory(STONE_KNIFE).GetWeaponType() != testCharacter2.FindSpecificItemInInventory(WOODEN_BOW).GetWeaponType());
 	assert(testCharacter.FindSpecificItemInInventory(STONE_KNIFE).get_range() != testCharacter2.FindSpecificItemInInventory(WOODEN_BOW).get_range());
 }
 
