@@ -12,7 +12,7 @@
 
 using namespace std;
 
-int Test1();
+int PrintoutOfCharacterDetails();
 void DynamicAllocationOfAnimalWarriors();
 void KnifeAndBowHaveDifferentRange();
 void UseSpecificBowFeature();
@@ -21,7 +21,7 @@ void BowMustBeABow();
 
 int main()
 {
-	Test1();
+	PrintoutOfCharacterDetails();
 	DynamicAllocationOfAnimalWarriors();
 	KnifeAndBowHaveDifferentRange();
 	UseSpecificBowFeature();
@@ -30,7 +30,7 @@ int main()
 	return 0;
 }
 
-int Test1() {
+int PrintoutOfCharacterDetails() {
 	Character testCharacter("TestCharacter", CAT);
 	Character testCharacter2;
 	testCharacter.AddItemToCharacterInventory(STONE_KNIFE);
