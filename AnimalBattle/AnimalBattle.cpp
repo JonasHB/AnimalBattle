@@ -5,6 +5,7 @@
 // Todo: Kommentera färdigt
 // Todo: Gör något åt testerna, de kan inte ligga löst i denna filen
 // Todo: Kan man verkligen använda klassen Bow som jag gjort. En inventory har en lista över Weapon, inte Bow. Det verkar ju dock funka.
+// Todo: Lägg till något från nyare version av C++
 
 #include "AnimalBattle.h"
 #include <cassert>
