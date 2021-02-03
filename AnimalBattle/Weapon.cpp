@@ -1,5 +1,6 @@
 #include "Weapon.h"
 
+// Determine range and damage of a weapon based on the weapon type
 Weapon::Weapon(weapons strWeaponType) :weapon_type(strWeaponType) {
 	if (weapon_type == WOODEN_BOW)
 	{
