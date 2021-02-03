@@ -11,10 +11,10 @@
 class Character {
 private:
 	std::string character_name_;
-	AnimalType characterAnimalType;
 	unsigned int health_;
-
+	AnimalType characterAnimalType;
 	Inventory characterInventory;
+
 public:
 	Character()
 		: character_name_("Noname"), characterAnimalType(NULL_ANIMAL), health_(10) {}
@@ -28,8 +28,7 @@ public:
 	void AddItemToCharacterInventory(weapons item_to_add);
 	void ListCharacterInventory();
 	Weapon FindSpecificItemInInventory(weapons weapon_to_be_found);
+	std::string PrintAnimalType(animals myAnimalType);
 };
-
-std::string PrintAnimalType(animals myAnimalType);
 
 #endif //CHARACTER_H

@@ -20,6 +20,7 @@ int main()
 	UseSpecificBowFeature();
 	return 0;
 }
+
 int Test1() {
 	Character testCharacter("TestCharacter", CAT);
 	Character testCharacter2;
@@ -29,6 +30,7 @@ int Test1() {
 	testCharacter2.PrintDescription();
 	return 0;
 }
+
 void DynamicAllocationOfAnimalWarriors()
 {
 	list<Character> list_of_animal_warriors;

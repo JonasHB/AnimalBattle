@@ -12,15 +12,19 @@ Weapon::Weapon(weapons strWeaponType) :weapon_type(strWeaponType) {
 		damage_ = STONE_KNIFE_DAMAGE;
 	}
 }
+
 Weapon::Weapon() {
 	weapon_type = NULL_WEAPON;
-};
+}
+
 unsigned int Weapon::get_range() {
 	return range_;
-};
+}
+
 unsigned int Weapon::get_damage() {
 	return damage_;
 }
+
 std::string Weapon::GetWeaponAsString()
 {
 	if (weapon_type == WOODEN_BOW)

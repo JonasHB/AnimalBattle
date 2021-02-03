@@ -2,19 +2,22 @@
 
 Inventory::Inventory() {
 }
+
 Inventory::~Inventory() {
-	while (!weapon_list.empty())
+	while (!weapon_list_.empty())
 	{
-		weapon_list.pop_back();
+		weapon_list_.pop_back();
 	}
 }
+
 void Inventory::Add(weapons weapon_to_add) {
 	Weapon temp_weapon(weapon_to_add);
-	weapon_list.push_back(temp_weapon);
+	weapon_list_.push_back(temp_weapon);
 }
+
 void Inventory::ListInventory() {
 	std::list<Weapon>::iterator it;
-	for (it = weapon_list.begin(); it != weapon_list.end(); it++)
+	for (it = weapon_list_.begin(); it != weapon_list_.end(); it++)
 	{
 		cout << "\t\t";
 		cout << it->GetWeaponAsString();
@@ -25,7 +28,7 @@ void Inventory::ListInventory() {
 Weapon Inventory::FindSpecificItemInInventory(weapons weapon_to_be_found)
 {
 	list<Weapon>::iterator it;
-	for (it = weapon_list.begin(); it != weapon_list.end(); it++)
+	for (it = weapon_list_.begin(); it != weapon_list_.end(); it++)
 	{
 		if (it->weapon_type == weapon_to_be_found)
 			return *it;
