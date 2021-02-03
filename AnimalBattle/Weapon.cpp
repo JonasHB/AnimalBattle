@@ -43,6 +43,10 @@ weapons Weapon::GetWeaponType()
 
 Bow::Bow(weapons strWeaponType)
 {
+	if (strWeaponType > WOODEN_BOW)
+	{
+		throw std::invalid_argument("Weapon must be a bow in order to instantiate this class");
+	}
 	weapon_type_ = strWeaponType;
 	arrows = 0;
 }
@@ -50,4 +54,13 @@ Bow::Bow(weapons strWeaponType)
 void Bow::ChargeArrows(unsigned int amount_of_arrows_to_charge)
 {
 	arrows = arrows + amount_of_arrows_to_charge;
+}
+
+Knife::Knife(weapons strWeaponType)
+{
+	if (strWeaponType < STONE_KNIFE)
+	{
+		throw std::invalid_argument("Weapon must be a knife in order to instantiate this class");
+	}
+	weapon_type_ = strWeaponType;
 }

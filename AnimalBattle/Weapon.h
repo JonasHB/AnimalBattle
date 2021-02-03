@@ -7,6 +7,7 @@
 
 #include <list>
 #include <string>
+#include <stdexcept>
 
 const unsigned char WOODEN_BOW_RANGE = 3;
 const unsigned char WOODEN_BOW_DAMAGE = 2;
@@ -38,5 +39,13 @@ public:
 	Bow(weapons strWeaponType);
 	unsigned int arrows;
 	void ChargeArrows(unsigned int amount_of_arrows_to_charge);
+};
+
+class Knife : public Weapon {
+private:
+	weapons weapon_type_;
+
+public:
+	Knife(weapons strWeaponType);
 };
 #endif //WEAPON_H

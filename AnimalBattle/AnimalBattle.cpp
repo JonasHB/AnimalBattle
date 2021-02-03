@@ -2,6 +2,10 @@
 // Main file. The program AnimalBattle is a fantasy battle simulator. The purpose of the program
 // is to serve as a porfolio showing a program created by JHB.
 
+// Todo: Kommentera färdigt
+// Todo: Gör något åt testerna, de kan inte ligga löst i denna filen
+// Todo: Kan man verkligen använda klassen Bow som jag gjort. En inventory har en lista över Weapon, inte Bow. Det verkar ju dock funka.
+
 #include "AnimalBattle.h"
 #include <cassert>
 
@@ -11,6 +15,8 @@ int Test1();
 void DynamicAllocationOfAnimalWarriors();
 void KnifeAndBowHaveDifferentRange();
 void UseSpecificBowFeature();
+void KnifeMustBeAKnife();
+void BowMustBeABow();
 
 int main()
 {
@@ -18,6 +24,8 @@ int main()
 	DynamicAllocationOfAnimalWarriors();
 	KnifeAndBowHaveDifferentRange();
 	UseSpecificBowFeature();
+	KnifeMustBeAKnife();
+	BowMustBeABow();
 	return 0;
 }
 
@@ -67,4 +75,32 @@ void UseSpecificBowFeature()
 	Bow testWeapon(WOODEN_BOW);
 	testWeapon.ChargeArrows(5);
 	assert(testWeapon.arrows == 5);
+}
+
+void KnifeMustBeAKnife()
+{
+	try {
+		//Trying invalid class instantiation by trying to make a bow a knife
+		Knife testWeapon(WOODEN_BOW);
+	}
+	catch (invalid_argument){
+		// Expected outcome
+	}
+	catch (...) {
+		assert(false);
+	}
+}
+
+void BowMustBeABow()
+{
+	try {
+		//Trying invalid class instantiation by trying to make a bow a knife
+		Bow testWeapon(STONE_KNIFE);
+	}
+	catch (invalid_argument) {
+		// Expected outcome
+	}
+	catch (...) {
+		assert(false);
+	}
 }
