@@ -6,6 +6,7 @@
 // Todo: Do something about the tests, they can not exist like functions here
 // Todo: Can I really use the class Bow as I've done? An inventory has a list of the class Weapon, not Bow. But it seems to work.
 // Todo: Add something from a newer version of C++
+// Todo: Add virtual function specifier on the class Weapon
 
 #include "AnimalBattle.h"
 #include <cassert>
