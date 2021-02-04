@@ -1,5 +1,6 @@
 // Inventory.h
-// Class for containing and handling of character weapon inventory. Responsible for adding, searching and listing weapons.
+// Class for containing and handling of character weapon inventory. Responsible for adding,
+// searching and listing weapons.
 
 #ifndef INVENTORY_H
 #define INVENTORY_H

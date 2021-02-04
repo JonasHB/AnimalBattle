@@ -22,7 +22,6 @@ private:
 	unsigned int range_;
 	unsigned int damage_;
 
-
 public:
 	Weapon(weapons strWeaponType);
 	Weapon();
