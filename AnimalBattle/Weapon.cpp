@@ -2,10 +2,14 @@
 
 // Determine range and damage of a weapon based on the weapon type
 Weapon::Weapon(weapons strWeaponType) :weapon_type(strWeaponType) {
+	range_ = 0;
+	damage_ = 0;
 	DetermineWeaponParameters();
 }
 
 Weapon::Weapon() {
+	range_ = 0;
+	damage_ = 0;
 	weapon_type = NULL_WEAPON;
 }
 
