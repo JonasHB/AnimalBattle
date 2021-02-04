@@ -6,7 +6,6 @@
 // Todo: Do something about the tests, they can not exist like functions here
 // Todo: Can I really use the class Bow as I've done? An inventory has a list of the class Weapon, not Bow. But it seems to work.
 // Todo: Add something from a newer version of C++
-// Todo: Add virtual function specifier on the class Weapon
 
 #include "AnimalBattle.h"
 #include <cassert>
@@ -19,6 +18,7 @@ void KnifeAndBowHaveDifferentRange();
 void UseSpecificBowFeature();
 void KnifeMustBeAKnife();
 void BowMustBeABow();
+void GetWeaponStats();
 
 int main()
 {
@@ -28,6 +28,7 @@ int main()
 	UseSpecificBowFeature();
 	KnifeMustBeAKnife();
 	BowMustBeABow();
+	GetWeaponStats();
 	return 0;
 }
 
@@ -105,4 +106,16 @@ void BowMustBeABow()
 	catch (...) {
 		assert(false);
 	}
+}
+
+void GetWeaponStats()
+{
+	Weapon testWeapon(WOODEN_BOW);
+	testWeapon.PrintWeaponStats();
+
+	Knife testKnife(STONE_KNIFE);
+	testKnife.PrintWeaponStats();
+
+	Bow testBow(WOODEN_BOW);
+	testBow.PrintWeaponStats();
 }

@@ -1,21 +1,12 @@
 #include "Weapon.h"
 
 // Determine range and damage of a weapon based on the weapon type
-Weapon::Weapon(weapons strWeaponType) :weapon_type_(strWeaponType) {
-	if (weapon_type_ == WOODEN_BOW)
-	{
-		range_ = WOODEN_BOW_RANGE;
-		damage_ = WOODEN_BOW_DAMAGE;
-	}
-	else if (weapon_type_ == STONE_KNIFE)
-	{
-		range_ = STONE_KNIFE_RANGE;
-		damage_ = STONE_KNIFE_DAMAGE;
-	}
+Weapon::Weapon(weapons strWeaponType) :weapon_type(strWeaponType) {
+	DetermineWeaponParameters();
 }
 
 Weapon::Weapon() {
-	weapon_type_ = NULL_WEAPON;
+	weapon_type = NULL_WEAPON;
 }
 
 unsigned int Weapon::get_range() {
@@ -28,9 +19,9 @@ unsigned int Weapon::get_damage() {
 
 std::string Weapon::GetWeaponAsString()
 {
-	if (weapon_type_ == WOODEN_BOW)
+	if (weapon_type == WOODEN_BOW)
 		return "Wooden bow";
-	else if (weapon_type_ == STONE_KNIFE)
+	else if (weapon_type == STONE_KNIFE)
 		return "Stone knife";
 	else
 		return "Undefined weapon";
@@ -38,7 +29,28 @@ std::string Weapon::GetWeaponAsString()
 
 weapons Weapon::GetWeaponType()
 {
-	return weapon_type_;
+	return weapon_type;
+}
+
+void Weapon::PrintWeaponStats()
+{
+	std::cout << "Weapon type: " << GetWeaponAsString() << std::endl;
+	std::cout << "Range: " << get_range() << std::endl;
+	std::cout << "Damage " << get_damage() << std::endl;
+}
+
+void Weapon::DetermineWeaponParameters()
+{
+	if (weapon_type == WOODEN_BOW)
+	{
+		range_ = WOODEN_BOW_RANGE;
+		damage_ = WOODEN_BOW_DAMAGE;
+	}
+	else if (weapon_type == STONE_KNIFE)
+	{
+		range_ = STONE_KNIFE_RANGE;
+		damage_ = STONE_KNIFE_DAMAGE;
+	}
 }
 
 Bow::Bow(weapons strWeaponType)
@@ -47,7 +59,8 @@ Bow::Bow(weapons strWeaponType)
 	{
 		throw std::invalid_argument("Weapon must be a bow in order to instantiate this class");
 	}
-	weapon_type_ = strWeaponType;
+	weapon_type = strWeaponType;
+	DetermineWeaponParameters();
 	arrows = 0;
 }
 
@@ -56,11 +69,20 @@ void Bow::ChargeArrows(unsigned int amount_of_arrows_to_charge)
 	arrows = arrows + amount_of_arrows_to_charge;
 }
 
+void Bow::PrintWeaponStats()
+{
+	std::cout << "Weapon type: " << GetWeaponAsString() << std::endl;
+	std::cout << "Range: " << get_range() << std::endl;
+	std::cout << "Damage " << get_damage() << std::endl;
+	std::cout << "Arrows: " << arrows << std::endl;
+}
+
 Knife::Knife(weapons strWeaponType)
 {
 	if (strWeaponType < STONE_KNIFE)
 	{
 		throw std::invalid_argument("Weapon must be a knife in order to instantiate this class");
 	}
-	weapon_type_ = strWeaponType;
+	weapon_type = strWeaponType;
+	DetermineWeaponParameters();
 }
