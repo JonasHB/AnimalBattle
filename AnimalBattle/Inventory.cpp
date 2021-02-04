@@ -16,22 +16,18 @@ void Inventory::Add(weapons weapon_to_add) {
 }
 
 void Inventory::ListInventory() {
-	std::list<Weapon>::iterator it;
-	for (it = weapon_list_.begin(); it != weapon_list_.end(); it++)
+	for (Weapon it : weapon_list_)
 	{
-		cout << "\t\t";
-		cout << it->GetWeaponAsString();
-		cout << std::endl;
+		cout << "\t\t" << it.GetWeaponAsString() << endl;
 	}
 }
 
 Weapon Inventory::FindSpecificItemInInventory(weapons weapon_to_be_found)
 {
-	list<Weapon>::iterator it;
-	for (it = weapon_list_.begin(); it != weapon_list_.end(); it++)
+	for (Weapon it : weapon_list_)
 	{
-		if (it->GetWeaponType() == weapon_to_be_found)
-			return *it;
+		if (it.GetWeaponType() == weapon_to_be_found)
+			return it;
 	}
 	return NULL_WEAPON;
 }
