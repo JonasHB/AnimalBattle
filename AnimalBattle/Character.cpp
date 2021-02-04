@@ -5,7 +5,7 @@ Character::~Character() {
 
 void Character::PrintDescription() {
 	std::cout << "Name: "
-		<< character_name_ << std::endl
+		<< character_name << std::endl
 		<< "\tHealth: " << health_ << std::endl
 		<< "\tAnimal type: " << PrintAnimalType(characterAnimalType.animal_type) << std::endl
 		<< "\tInventory:" << std::endl;

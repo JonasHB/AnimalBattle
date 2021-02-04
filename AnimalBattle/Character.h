@@ -10,17 +10,18 @@
 
 class Character {
 private:
-	std::string character_name_;
 	unsigned int health_;
 	AnimalType characterAnimalType;
 	Inventory characterInventory;
 
 public:
+	std::string character_name;
+
 	Character()
-		: character_name_("Noname"), characterAnimalType(NULL_ANIMAL), health_(10) {}
+		: character_name("Noname"), characterAnimalType(NULL_ANIMAL), health_(10) {}
 
 	Character(std::string myName, AnimalType myAnimalType)
-		: character_name_(myName), characterAnimalType(myAnimalType), health_(10) {}
+		: character_name(myName), characterAnimalType(myAnimalType), health_(10) {}
 
 	~Character();
 
