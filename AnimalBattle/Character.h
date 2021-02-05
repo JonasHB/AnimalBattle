@@ -4,7 +4,6 @@
 #ifndef CHARACTER_H
 #define CHARACTER_H
 
-#include <iostream>
 #include "AnimalType.h"
 #include "Inventory.h"
 
@@ -25,11 +24,8 @@ public:
 
 	~Character();
 
-	void PrintDescription();
 	void AddItemToCharacterInventory(weapons item_to_add);
-	void ListCharacterInventory();
 	Weapon FindSpecificItemInInventory(weapons weapon_to_be_found);
-	std::string PrintAnimalType(animals myAnimalType);
 };
 
 #endif //CHARACTER_H
