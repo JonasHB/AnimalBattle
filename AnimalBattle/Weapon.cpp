@@ -13,11 +13,11 @@ Weapon::Weapon() {
 	weapon_type = NULL_WEAPON;
 }
 
-unsigned int Weapon::get_range() {
+unsigned int Weapon::GetRange() {
 	return range_;
 }
 
-unsigned int Weapon::get_damage() {
+unsigned int Weapon::GetDamage() {
 	return damage_;
 }
 
@@ -39,8 +39,13 @@ weapons Weapon::GetWeaponType()
 void Weapon::PrintWeaponStats()
 {
 	std::cout << "Weapon type: " << GetWeaponAsString() << std::endl;
-	std::cout << "Range: " << get_range() << std::endl;
-	std::cout << "Damage " << get_damage() << std::endl;
+	std::cout << "Range: " << GetRange() << std::endl;
+	std::cout << "Damage " << GetDamage() << std::endl;
+}
+
+weapon_properties Weapon::ReturnWeaponStats()
+{
+	return weapon_properties{ GetRange(), GetDamage(), weapon_type, 0};
 }
 
 void Weapon::DetermineWeaponParameters()
@@ -76,9 +81,14 @@ void Bow::ChargeArrows(unsigned int amount_of_arrows_to_charge)
 void Bow::PrintWeaponStats()
 {
 	std::cout << "Weapon type: " << GetWeaponAsString() << std::endl;
-	std::cout << "Range: " << get_range() << std::endl;
-	std::cout << "Damage " << get_damage() << std::endl;
+	std::cout << "Range: " << GetRange() << std::endl;
+	std::cout << "Damage " << GetDamage() << std::endl;
 	std::cout << "Arrows: " << arrows << std::endl;
+}
+
+weapon_properties Bow::ReturnWeaponStats()
+{
+	return weapon_properties{GetRange(), GetDamage(), weapon_type, arrows};
 }
 
 Knife::Knife(weapons strWeaponType)

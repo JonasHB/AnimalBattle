@@ -17,6 +17,13 @@ const unsigned char STONE_KNIFE_DAMAGE = 2;
 
 enum weapons { NULL_WEAPON, WOODEN_BOW, STONE_KNIFE };
 
+struct weapon_properties {
+	unsigned int range;
+	unsigned int damage;
+	weapons weapon_type;
+	unsigned int arrows;
+};
+
 class Weapon {
 private:
 	unsigned int range_;
@@ -26,11 +33,12 @@ public:
 	Weapon(weapons strWeaponType);
 	Weapon();
 	weapons weapon_type;
-	unsigned int get_range();
-	unsigned int get_damage();
+	unsigned int GetRange();
+	unsigned int GetDamage();
 	std::string GetWeaponAsString();
 	weapons GetWeaponType();
 	virtual void PrintWeaponStats();
+	virtual weapon_properties ReturnWeaponStats();
 	virtual void DetermineWeaponParameters();
 };
 
@@ -42,6 +50,7 @@ public:
 	unsigned int arrows;
 	void ChargeArrows(unsigned int amount_of_arrows_to_charge);
 	void PrintWeaponStats() override;
+	weapon_properties ReturnWeaponStats() override;
 };
 
 class Knife : public Weapon {
