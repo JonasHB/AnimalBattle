@@ -1,8 +1,8 @@
 #include "Inventory.h"
 
-Inventory::Inventory() {
-}
-
+// Getting rid of all weapons in the inventory. Really not necessary as the standard library deals
+// with the deallocation of memory in its destructor. It is however a good reminder to be careful
+// with data allocation.
 Inventory::~Inventory() {
 	while (!weapon_list_.empty())
 	{
@@ -10,6 +10,7 @@ Inventory::~Inventory() {
 	}
 }
 
+// Adding weapon to the inventory
 void Inventory::Add(weapons weapon_to_add) {
 	Weapon temp_weapon(weapon_to_add);
 	weapon_list_.push_back(temp_weapon);
@@ -26,6 +27,7 @@ const Weapon Inventory::GetSpecificItemInInventory(weapons weapon_to_be_found)
 	return NULL_WEAPON;
 }
 
+// Return the amount of items in the inventory of a specified type
 const int Inventory::GetAmountOfItemsOfSpecificType(weapons weapon_to_be_found)
 {
 	int counter = 0;
