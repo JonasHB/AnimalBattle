@@ -11,8 +11,8 @@
 class Character {
 private:
 	unsigned int health_;
-	AnimalType characterAnimalType;
-	Inventory characterInventory;
+	AnimalType characterAnimalType;	 // Every character must be a type of animal
+	Inventory characterInventory;    // Every character has an inventory
 
 public:
 	std::string character_name;
