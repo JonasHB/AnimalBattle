@@ -15,10 +15,10 @@ const unsigned char STONE_KNIFE_DAMAGE = 2;
 enum weapons { NULL_WEAPON, WOODEN_BOW, STONE_KNIFE };
 
 struct weapon_properties {
-	unsigned int range;
-	unsigned int damage;
-	weapons weapon_type;
-	unsigned int arrows;
+	const unsigned int range;
+	const unsigned int damage;
+	const weapons weapon_type;
+	const unsigned int arrows;
 };
 
 class Weapon {
@@ -30,26 +30,22 @@ public:
 	Weapon(weapons strWeaponType);
 	Weapon();
 	weapons weapon_type;
-	unsigned int GetRange();
-	unsigned int GetDamage();
-	weapons GetWeaponType();
-	virtual weapon_properties ReturnWeaponStats();
+	const unsigned int GetRange();
+	const unsigned int GetDamage();
+	const weapons GetWeaponType();
+	const virtual weapon_properties ReturnWeaponStats();
 	virtual void DetermineWeaponParameters();
 };
 
 class Bow : public Weapon{
-private:
-
 public:
 	Bow(weapons strWeaponType);
 	unsigned int arrows;
 	void ChargeArrows(unsigned int amount_of_arrows_to_charge);
-	weapon_properties ReturnWeaponStats() override;
+	const weapon_properties ReturnWeaponStats() override;
 };
 
 class Knife : public Weapon {
-private:
-
 public:
 	Knife(weapons strWeaponType);
 };

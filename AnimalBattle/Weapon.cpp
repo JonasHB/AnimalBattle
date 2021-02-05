@@ -13,20 +13,20 @@ Weapon::Weapon() {
 	weapon_type = NULL_WEAPON;
 }
 
-unsigned int Weapon::GetRange() {
+const unsigned int Weapon::GetRange() {
 	return range_;
 }
 
-unsigned int Weapon::GetDamage() {
+const unsigned int Weapon::GetDamage() {
 	return damage_;
 }
 
-weapons Weapon::GetWeaponType()
+const weapons Weapon::GetWeaponType()
 {
 	return weapon_type;
 }
 
-weapon_properties Weapon::ReturnWeaponStats()
+const weapon_properties Weapon::ReturnWeaponStats()
 {
 	return weapon_properties{ GetRange(), GetDamage(), weapon_type, 0};
 }
@@ -61,7 +61,7 @@ void Bow::ChargeArrows(unsigned int amount_of_arrows_to_charge)
 	arrows = arrows + amount_of_arrows_to_charge;
 }
 
-weapon_properties Bow::ReturnWeaponStats()
+const weapon_properties Bow::ReturnWeaponStats()
 {
 	return weapon_properties{GetRange(), GetDamage(), weapon_type, arrows};
 }
