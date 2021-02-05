@@ -2,7 +2,6 @@
 #include <gtest/gtest.h>
 #include "Character.h"
 #include "AnimalType.h"
-#include <iostream>
 
 // Make sure it is possible to add a weapon to the inventory
 TEST(InventoryTest, AddItemToInventory) {

@@ -2,7 +2,6 @@
 #include <gtest/gtest.h>
 #include "Character.h"
 #include "AnimalType.h"
-#include <iostream>
 
 // Default range is set as expected
 TEST(WeaponTest, DefaultRangeAsExpected) {
@@ -57,7 +56,7 @@ TEST(WeaponTest, BowIsNotAKnife) {
 	ASSERT_TRUE(got_invalid_argument);
 }
 
-// It should not be possible to create a Knife with the weapon type of bow
+// It should not be possible to create a Knife with the weapon type bow
 TEST(WeaponTest, KnifeIsNotABow) {
 	bool got_invalid_argument = false;
 	try {
@@ -70,9 +69,10 @@ TEST(WeaponTest, KnifeIsNotABow) {
 	ASSERT_TRUE(got_invalid_argument);
 }
 
-// Charging a bow with arrows result in correct amount of arrows
+// Charging a bow with arrows shall result in correct amount of arrows
 TEST(WeaponTest, ChargingBowWithArrows) {
 	Bow testBow(WOODEN_BOW);
 	testBow.ChargeArrows(5);
-	EXPECT_EQ(testBow.arrows, 5);
+	testBow.ChargeArrows(2);
+	EXPECT_EQ(testBow.arrows, 7);
 }
