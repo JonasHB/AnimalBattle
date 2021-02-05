@@ -49,7 +49,7 @@ TEST(WeaponTest, BowIsNotAKnife) {
 	try {
 		Bow testBow(STONE_KNIFE);
 	}
-	catch (invalid_argument) {
+	catch (std::invalid_argument) {
 		// Expected outcome
 		got_invalid_argument = true;
 	}
@@ -62,7 +62,7 @@ TEST(WeaponTest, KnifeIsNotABow) {
 	try {
 		Knife testKnife(WOODEN_BOW);
 	}
-	catch (invalid_argument) {
+	catch (std::invalid_argument) {
 		// Expected outcome
 		got_invalid_argument = true;
 	}

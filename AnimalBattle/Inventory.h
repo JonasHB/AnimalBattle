@@ -5,8 +5,6 @@
 #ifndef INVENTORY_H
 #define INVENTORY_H
 
-using namespace std;
-
 #include <list>
 #include "Weapon.h"
 
@@ -18,8 +16,8 @@ public:
 	Inventory();
 	~Inventory();
 	void Add(weapons weapon_to_add);
-	Weapon GetSpecificItemInInventory(weapons weapon_to_be_found);
-	int GetAmountOfItemsOfSpecificType(weapons weapon_to_be_found);
+	const Weapon GetSpecificItemInInventory(weapons weapon_to_be_found);
+	const int GetAmountOfItemsOfSpecificType(weapons weapon_to_be_found);
 };
 
 #endif //INVENTORY_H

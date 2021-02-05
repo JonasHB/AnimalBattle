@@ -7,7 +7,7 @@
 TEST(InventoryTest, AddItemToInventory) {
 	Inventory testInventory;
 	testInventory.Add(WOODEN_BOW);
-	EXPECT_EQ(testInventory.GetSpecificItemInInventory(WOODEN_BOW).GetWeaponType(), WOODEN_BOW);
+	EXPECT_EQ(testInventory.GetSpecificItemInInventory(WOODEN_BOW).weapon_type, WOODEN_BOW);
 }
 
 // Make sure the class method can find one item among many
@@ -15,7 +15,7 @@ TEST(InventoryTest, FindSpecificItemInInventory) {
 	Inventory testInventory;
 	testInventory.Add(WOODEN_BOW);
 	testInventory.Add(STONE_KNIFE);
-	EXPECT_EQ(testInventory.GetSpecificItemInInventory(STONE_KNIFE).GetWeaponType(), STONE_KNIFE);
+	EXPECT_EQ(testInventory.GetSpecificItemInInventory(STONE_KNIFE).weapon_type, STONE_KNIFE);
 }
 
 // It should be possible to return the amount of a specific weapon type in the inventory
