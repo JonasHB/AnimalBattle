@@ -13,24 +13,29 @@ Weapon::Weapon() {
 	weapon_type = NULL_WEAPON;
 }
 
+// Get weapon range
 const unsigned int Weapon::GetRange() {
 	return range_;
 }
 
+// Get weapon damage
 const unsigned int Weapon::GetDamage() {
 	return damage_;
 }
 
+// Get weapon_type;
 const weapons Weapon::GetWeaponType()
 {
 	return weapon_type;
 }
 
-const weapon_properties Weapon::ReturnWeaponStats()
+// Get weapon properties. This method is overridden by child class
+const weapon_properties Weapon::GetWeaponStats()
 {
 	return weapon_properties{ GetRange(), GetDamage(), weapon_type, 0};
 }
 
+// Determine range and damage of a weapon based on precompiled values
 void Weapon::DetermineWeaponParameters()
 {
 	if (weapon_type == WOODEN_BOW)
@@ -45,6 +50,8 @@ void Weapon::DetermineWeaponParameters()
 	}
 }
 
+// Constructor for the Bow subclass. The constructor throws an exception if the weapon type is
+// anything than a bow.
 Bow::Bow(weapons strWeaponType)
 {
 	if (strWeaponType > WOODEN_BOW)
@@ -56,16 +63,19 @@ Bow::Bow(weapons strWeaponType)
 	arrows = 0;
 }
 
+// In the Bow subclass it is possible to charge the bow with arrows.
 void Bow::ChargeArrows(unsigned int amount_of_arrows_to_charge)
 {
 	arrows = arrows + amount_of_arrows_to_charge;
 }
 
-const weapon_properties Bow::ReturnWeaponStats()
+// This overridden method also return amount of arrows charged.
+const weapon_properties Bow::GetWeaponStats()
 {
 	return weapon_properties{GetRange(), GetDamage(), weapon_type, arrows};
 }
 
+// Constructor for the Knife subclass.
 Knife::Knife(weapons strWeaponType)
 {
 	if (strWeaponType < STONE_KNIFE)

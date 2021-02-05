@@ -77,7 +77,7 @@ TEST(WeaponTest, ChargingBowWithArrows) {
 	EXPECT_EQ(testBow.arrows, 7);
 }
 
-// The overriden method ReturnWeaponStats return the Bow class specific member arrows which the
+// The overriden method GetWeaponStats return the Bow class specific member arrows which the
 // parent class does not
 TEST(WeaponTest, OverridenMethodReturnWeaponStatsTakesArrowsInToAccount) {
 	Knife testKnife(STONE_KNIFE);
@@ -85,8 +85,8 @@ TEST(WeaponTest, OverridenMethodReturnWeaponStatsTakesArrowsInToAccount) {
 
 	testBow.ChargeArrows(5);
 
-	weapon_properties stone_knife_properties = testKnife.ReturnWeaponStats();
-	weapon_properties wooden_bow_properties = testBow.ReturnWeaponStats();
+	weapon_properties stone_knife_properties = testKnife.GetWeaponStats();
+	weapon_properties wooden_bow_properties = testBow.GetWeaponStats();
 
 	EXPECT_EQ(stone_knife_properties.arrows, 0);
 	EXPECT_EQ(wooden_bow_properties.arrows, 5);
