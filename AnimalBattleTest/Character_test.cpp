@@ -7,7 +7,7 @@
 TEST(CharacterTest, AddItemToInventory) {
   Character testCharacter("TestCharacter", CAT);
   testCharacter.AddItemToCharacterInventory(STONE_KNIFE);
-  EXPECT_EQ(testCharacter.FindSpecificItemInInventory(STONE_KNIFE).GetWeaponType(), STONE_KNIFE);
+  EXPECT_EQ(testCharacter.GetSpecificItemInInventory(STONE_KNIFE).GetWeaponType(), STONE_KNIFE);
 }
 
 // Make sure the class method can find one item among many
@@ -15,7 +15,7 @@ TEST(CharacterTest, FindSpecificItemInInventory) {
 	Character testCharacter("TestCharacter", CAT);
 	testCharacter.AddItemToCharacterInventory(STONE_KNIFE);
 	testCharacter.AddItemToCharacterInventory(WOODEN_BOW);
-	EXPECT_EQ(testCharacter.FindSpecificItemInInventory(WOODEN_BOW).GetWeaponType(), WOODEN_BOW);
+	EXPECT_EQ(testCharacter.GetSpecificItemInInventory(WOODEN_BOW).GetWeaponType(), WOODEN_BOW);
 }
 
 // Make sure that the character name is exposed in the class

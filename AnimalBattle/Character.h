@@ -4,6 +4,7 @@
 #ifndef CHARACTER_H
 #define CHARACTER_H
 
+#include <string>
 #include "AnimalType.h"
 #include "Inventory.h"
 
@@ -22,10 +23,10 @@ public:
 	Character(std::string myName, AnimalType myAnimalType)
 		: character_name(myName), characterAnimalType(myAnimalType), health_(10) {}
 
-	~Character();
+	~Character() {};
 
 	void AddItemToCharacterInventory(weapons item_to_add);
-	Weapon FindSpecificItemInInventory(weapons weapon_to_be_found);
+	Weapon GetSpecificItemInInventory(weapons weapon_to_be_found);
 };
 
 #endif //CHARACTER_H

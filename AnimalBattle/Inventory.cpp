@@ -15,6 +15,7 @@ void Inventory::Add(weapons weapon_to_add) {
 	weapon_list_.push_back(temp_weapon);
 }
 
+// Return the first item in the inventory that corresponds input argument
 const Weapon Inventory::GetSpecificItemInInventory(weapons weapon_to_be_found)
 {
 	for (Weapon it : weapon_list_)
