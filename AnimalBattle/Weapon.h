@@ -6,7 +6,6 @@
 #define WEAPON_H
 
 #include <list>
-#include <string>
 #include <stdexcept>
 
 const unsigned char WOODEN_BOW_RANGE = 3;

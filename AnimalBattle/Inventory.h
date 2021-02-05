@@ -7,7 +7,6 @@
 
 using namespace std;
 
-#include <string>
 #include "Weapon.h"
 
 class Inventory {

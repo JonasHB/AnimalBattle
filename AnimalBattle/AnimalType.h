@@ -4,8 +4,6 @@
 #ifndef ANIMALTYPE_H
 #define ANIMALTYPE_H
 
-#include <string>
-
 enum animals { NULL_ANIMAL, CAT, DOG, GOAT, RABBIT };
 
 class AnimalType {
