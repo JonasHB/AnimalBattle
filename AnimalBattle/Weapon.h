@@ -8,7 +8,6 @@
 #include <list>
 #include <string>
 #include <stdexcept>
-#include <iostream>
 
 const unsigned char WOODEN_BOW_RANGE = 3;
 const unsigned char WOODEN_BOW_DAMAGE = 2;
@@ -35,9 +34,7 @@ public:
 	weapons weapon_type;
 	unsigned int GetRange();
 	unsigned int GetDamage();
-	std::string GetWeaponAsString();
 	weapons GetWeaponType();
-	virtual void PrintWeaponStats();
 	virtual weapon_properties ReturnWeaponStats();
 	virtual void DetermineWeaponParameters();
 };
@@ -49,7 +46,6 @@ public:
 	Bow(weapons strWeaponType);
 	unsigned int arrows;
 	void ChargeArrows(unsigned int amount_of_arrows_to_charge);
-	void PrintWeaponStats() override;
 	weapon_properties ReturnWeaponStats() override;
 };
 

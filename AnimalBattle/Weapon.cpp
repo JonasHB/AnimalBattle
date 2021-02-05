@@ -21,26 +21,9 @@ unsigned int Weapon::GetDamage() {
 	return damage_;
 }
 
-std::string Weapon::GetWeaponAsString()
-{
-	if (weapon_type == WOODEN_BOW)
-		return "Wooden bow";
-	else if (weapon_type == STONE_KNIFE)
-		return "Stone knife";
-	else
-		return "Undefined weapon";
-}
-
 weapons Weapon::GetWeaponType()
 {
 	return weapon_type;
-}
-
-void Weapon::PrintWeaponStats()
-{
-	std::cout << "Weapon type: " << GetWeaponAsString() << std::endl;
-	std::cout << "Range: " << GetRange() << std::endl;
-	std::cout << "Damage " << GetDamage() << std::endl;
 }
 
 weapon_properties Weapon::ReturnWeaponStats()
@@ -76,14 +59,6 @@ Bow::Bow(weapons strWeaponType)
 void Bow::ChargeArrows(unsigned int amount_of_arrows_to_charge)
 {
 	arrows = arrows + amount_of_arrows_to_charge;
-}
-
-void Bow::PrintWeaponStats()
-{
-	std::cout << "Weapon type: " << GetWeaponAsString() << std::endl;
-	std::cout << "Range: " << GetRange() << std::endl;
-	std::cout << "Damage " << GetDamage() << std::endl;
-	std::cout << "Arrows: " << arrows << std::endl;
 }
 
 weapon_properties Bow::ReturnWeaponStats()
