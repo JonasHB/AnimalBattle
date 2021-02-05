@@ -5,6 +5,8 @@
 #ifndef WEAPON_H
 #define WEAPON_H
 
+#include <stdexcept>
+
 const unsigned char WOODEN_BOW_RANGE = 3;
 const unsigned char WOODEN_BOW_DAMAGE = 2;
 const unsigned char STONE_KNIFE_RANGE = 1;
