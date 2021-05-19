@@ -1,4 +1,4 @@
 # AnimalBattle
-The program AnimalBattle is a fantasy battle simulator. The purpose of the program is to serve as a portfolio showing a program created by me.
+The program AnimalBattle is a fantasy battle simulator. Still in progress.
 
 Google Test Framework is used for the tests.
